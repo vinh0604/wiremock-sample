@@ -1,0 +1,27 @@
+{
+    "priority": 1,
+    "request": {
+        "method": "POST",
+        "url": "/api",
+        "headers" : {
+            "Content-Type" : {
+                "equalTo" : "application/json"
+            }
+        },
+        "bodyPatterns" : [
+            {
+                "matchesJsonPath" : "$[?(@.serviceID == 'getServer')]"
+            },
+            {
+                "matchesJsonPath" : "$[?(@.accountID == 'failedID')]"
+            }
+        ]
+    },
+    "response": {
+        "status": 202,
+        "bodyFileName": "getServer/fail.json",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
