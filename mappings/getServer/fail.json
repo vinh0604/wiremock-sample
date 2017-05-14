@@ -22,6 +22,7 @@
         "bodyFileName": "getServer/fail.json",
         "headers": {
             "Content-Type": "application/json"
-        }
+        },
+		    "transformers": ["body-transformer"]
     }
 }
